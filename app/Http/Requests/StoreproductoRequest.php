@@ -27,11 +27,13 @@ class StoreproductoRequest extends FormRequest
             'nombre' => 'required',
 	        'descripcion' => 'required',
 	        'precioU' => 'required',
+            'image' => '',
 	        'stock' => 'required',
 	        'cantMin' => 'required',
 	        'estado' => 'required',
 	        'id_Peso' => 'required',
-	        'id_Tipo' => 'required'
+	        'id_Tipo' => 'required',
+            'id_Cat' => ''
         ];
     }
 }

@@ -14,9 +14,25 @@ class producto extends Model
         'descripcion',
         'precioU',
         'stock',
-        'cantidadMin',
+        'image',
+        'cantMin',
         'estado',
         'id_Peso',
-        'id_Tipo'
+        'id_Tipo',
+        'id_Cat'
     ];
+
+    public function getGetImageAttribute(){
+        if($this->image){
+            return url("storage/$this->image");
+        }
+    } 
+
+    public function add_stock($cantidad){
+        $this->increment('stock', $cantidad);
+    }
+
+    public function subtract_stock($cantidad){
+        $this->decrement('stock', $cantidad);
+    }
 }

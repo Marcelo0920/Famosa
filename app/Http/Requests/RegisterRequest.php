@@ -26,17 +26,18 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'ci' => ['required', 'unique:users,ci', 'min:6'],
-            'sexo' => 'required',
-            'telefono' => ['required', 'unique:users,telefono', 'min:8'],
+            'ci' => '',
+            'sexo' => '',
+            'telefono' => ['required', 'unique:users,telefono', 'min:5'],
             'domicilio' => '',
             'estado' => '',
-            'TipoC' => 'required',
-            'TipoE' => 'required',
-            'TipoA' => 'required',
+            'TipoC' => '',
+            'TipoE' => '',
+            'TipoA' => '',
             'email' => ['required', 'unique:users,email', 'email'],
             'password' => ['required', 'min:5'],
             'password_confirmation' => ['required', 'same:password'],
+            'role' => '',
         ];
     }
 }

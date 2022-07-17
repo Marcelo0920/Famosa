@@ -1,73 +1,74 @@
-@extends('layouts.app-master')
-
+@extends('layouts.auth')
 @section('content')
-    
-    <form action="/register" method="POST">
-        @csrf
-        <br><br>
-        <h1> CREATE ACCOUNT </h1>
-        @include('layouts.partials.messages')
-        <div class="form-floating mb-3">
-            <input type="text" placeholder="name" name="name" class="form-control" id="exampleInputPassword1">
-            <label for="exampleInputPassword1" class="form-label">Name Complete</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="integer" placeholder="ci" name="ci" class="form-control" id="exampleInputPassword1">
-            <label for="exampleInputPassword1" class="form-label">CI</label>
-          </div>
-          <!-- <div class="form-floating mb-3">
-            <input type="text" placeholder="sexo" name="sexo" class="form-control" id="exampleInputPassword1">
-            <label for="exampleInputPassword1" class="form-label">Sexo</label>
-          </div>-->
-
-          <h5>Genere</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" value="M">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Masculine
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault2" value="F">
-            <label class="form-check-label" for="flexRadioDefault2">
-              Female
-            </label>
-          </div>
-          <br>
-
-          <div class="form-floating mb-3">
-            <input type="integer" placeholder="telefono" name="telefono" class="form-control" id="exampleInputPassword1">
-            <label for="exampleInputPassword1" class="form-label">Phone</label>
-          </div>
-        <div class="form-floating mb-3">
-            <input type="email" placeholder="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="images/img-01.png" alt="IMG" />
+                </div>
+                <form action="/register" method="POST">
+                    @csrf
+                    @include('layouts.partials.messages')
+                    <span class="login100-form-title"> Famosa Registration</span>
+                    <div class="wrap-input100 validate-input">
+                        <input id="name" class="input100" type="text" name="name" placeholder="Nombre Completo"
+                            :value="old('name')" required autofocus autocomplete="name" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input id="exampleInputEmail1" class="input100" type="email" name="email" :value="old('email')"
+                            placeholder="Email" required />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input id="exampleInputPassword1" class="input100" type="number" name="telefono"
+                            :value="old('phone')" placeholder="Teléfono" required />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input id="exampleInputPassword1" class="input100" type="password" name="password" required
+                            placeholder="Contraseña" autocomplete="new-password" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input id="password_confirmation" class="input100" type="password" name="password_confirmation"
+                            required placeholder="Confirmar Contraseña" autocomplete="new-password" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">
+                            Registrarme
+                        </button>
+                    </div>
+                    <div class="text-center p-t-136">
+                        <a class="txt2" href="{{ route('login') }}">
+                            {{ __('¿Ya tiene una cuenta?') }}
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <input type="hidden" placeholder="" name="TipoC" class="form-control" id="exampleInputPassword1"
+                        value="1">
+                    <input type="hidden" placeholder="" name="TipoE" class="form-control" id="exampleInputPassword1"
+                        value="0">
+                    <input type="hidden" placeholder="" name="TipoA" class="form-control" id="exampleInputPassword1"
+                        value="0">
+                </form>
+            </div>
         </div>
-        <div class="form-floating mb-3">
-            <input type="password" placeholder="password" name="password" class="form-control" id="exampleInputPassword1">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="password" placeholder="password_confirmation" name="password_confirmation" class="form-control" id="exampleInputPassword1">
-          <label for="exampleInputPassword1" class="form-label">Password Confirmation</label>
-        </div>
-
-        <div class="form-floating mb-3">
-          <input type="hidden" placeholder="" name="TipoC" class="form-control" id="exampleInputPassword1" value="1">
-        </div>
-
-        <div class="form-floating mb-3">
-          <input type="hidden" placeholder="" name="TipoE" class="form-control" id="exampleInputPassword1" value="0">
-        </div>
-
-        <div class="form-floating mb-3">
-          <input type="hidden" placeholder="" name="TipoA" class="form-control" id="exampleInputPassword1" value="0">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Create Account</button>
-      </form>
-      <br><br><br><br><br>
-    
+    </div>
 @endsection
-

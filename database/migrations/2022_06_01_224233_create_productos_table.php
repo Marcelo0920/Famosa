@@ -18,13 +18,16 @@ return new class extends Migration
             $table->string('nombre');
 	        $table->string('descripcion');
 	        $table->float('precioU');
+            $table->string('image')->nullable();
 	        $table->integer('stock');
 	        $table->integer('cantMin');
 	        $table->string('estado');
 	        $table->unsignedBigInteger('id_Peso');
 	        $table->unsignedBigInteger('id_Tipo');
+            $table->unsignedBigInteger('id_Cat')->nullable();
 	        $table->foreign('id_Peso')->references('id')->on('pesos')->onDelete('cascade')->onUpdate('cascade');
 	        $table->foreign('id_Tipo')->references('id')->on('tipos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_Cat')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

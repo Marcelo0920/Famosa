@@ -22,5 +22,5 @@
             <i class="fa fa-check"> </i>
             {{$data}}
         </div>
-    @endif    
+    @endif
 @endif
