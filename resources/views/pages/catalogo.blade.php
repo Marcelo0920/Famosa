@@ -83,8 +83,8 @@
                 </article>
             </div>
         @endforeach
-    </div><br>
-    <div class="pagination justify-content-end">
+    </div><br><br><br><br>
+    <div class="pagination d-flex justify-content-center">
         <h4>{!! $productos->links() !!}</h4>
-    </div><br>
+    </div><br><br><br>
 @endsection

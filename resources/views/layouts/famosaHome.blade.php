@@ -59,6 +59,21 @@
           </div>
 
 
+
+         {{--  @php
+                $id = Illuminate\Support\Facades\Auth::id();
+                $user = App\Models\User::find($id);
+                $carrito = App\Models\ShoppingCart::where('client_id', $user->id)->first();
+                $pesos = App\Models\peso::get();
+
+                $cartDetails = App\Models\ShoppingCartDetail::where('cart_id', $carrito->id)->get();
+                $productos = App\Models\producto::get();
+
+
+          @endphp
+ --}}
+
+
         <div class="page">
             @guest
                 @include('components.header')

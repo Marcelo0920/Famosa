@@ -499,7 +499,7 @@
               </article>
             </div>
           </div>
-          <a href="#">Ver Todos</a>
+          <a href="/catalogo">Ver Todos</a>
         </div>
       </section>
 
@@ -534,7 +534,7 @@
                 </div>
                 <div class="quote-tara-figure">
                   <img
-                    src="images/user-6-115x115.jpg"
+                    src="images/user-1.jpg"
                     alt=""
                     width="115"
                     height="115"
@@ -556,7 +556,7 @@
                 </div>
                 <div class="quote-tara-figure">
                   <img
-                    src="images/user-8-115x115.jpg"
+                    src="images/user-2.jpg"
                     alt=""
                     width="115"
                     height="115"
@@ -578,7 +578,7 @@
                 </div>
                 <div class="quote-tara-figure">
                   <img
-                    src="images/user-7-115x115.jpg"
+                    src="images/user-3.jpg"
                     alt=""
                     width="115"
                     height="115"
@@ -600,7 +600,7 @@
                 </div>
                 <div class="quote-tara-figure">
                   <img
-                    src="images/user-9-115x115.jpg"
+                    src="images/user-4.jpg"
                     alt=""
                     width="115"
                     height="115"
